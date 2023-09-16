@@ -1,4 +1,5 @@
 import { envelop, useEngine, useSchema } from "@envelop/core";
+import { useDisableIntrospection } from "@envelop/disable-introspection";
 import { useGraphQlJit } from "@envelop/graphql-jit";
 import { useImmediateIntrospection } from "@envelop/immediate-introspection";
 import { useParserCache } from "@envelop/parser-cache";
@@ -35,6 +36,8 @@ const graphqlHelperFn = async () => {
         ttl: 2000,
       }),
       useGraphQlJit(),
+      process.env?.NODE_ENV?.toLocaleLowerCase() === "production" &&
+        useDisableIntrospection(),
     ],
   });
 

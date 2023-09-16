@@ -8,6 +8,9 @@ dependencies:
   '@envelop/core':
     specifier: ^4.0.1
     version: 4.0.1
+  '@envelop/disable-introspection':
+    specifier: ^5.0.1
+    version: 5.0.1(@envelop/core@4.0.1)(graphql@15.8.0)
   '@envelop/graphql-jit':
     specifier: ^6.0.2
     version: 6.0.2(@envelop/core@4.0.1)(graphql@15.8.0)
@@ -85,6 +88,18 @@ packages:
     engines: {node: '>=16.0.0'}
     dependencies:
       '@envelop/types': 4.0.1
+      tslib: 2.6.2
+    dev: false
+
+  /@envelop/disable-introspection@5.0.1(@envelop/core@4.0.1)(graphql@15.8.0):
+    resolution: {integrity: sha512-stw+bcXMtZ2eMT5UU4PJpObKduVlLV1DyEz1vCo1TNFKnLIMkE7SPtQZEKOPaaH2R4W4305zjpu3N2bWYH04Zg==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      '@envelop/core': ^4.0.1
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@envelop/core': 4.0.1
+      graphql: 15.8.0
       tslib: 2.6.2
     dev: false
 
